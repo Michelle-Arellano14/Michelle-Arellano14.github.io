@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica final</title>
+    <p>Michelle Arellano Briones 225548</p>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+
+</head>
+<body style="background-color: rgb(243, 243, 243);">
+
+    <nav class="navbar navbar-dark navbar-expand-lg bg-dark mb-5">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Práctica Final</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          </div>
+        </div>
+      </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-1">
+                <div class="m-1">
+                    <p style="font-size: 5rem;">1</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card bg-dark text-light" style="width: 12rem;">
+                    <img class="m-3" src="https://i.discogs.com/LbXhCKyMwZ1j7DUBtMrLDkwOjewkaZun6EaRZoEZXg4/rs:fit/g:sm/q:90/h:600/w:600/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTM0NTI5/MjUtMTMzNzc5Mzg5/Ni0xNzc3LmpwZWc.jpeg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text"><strong> Gerhard Polt – Leberkäs' Hawaii </strong></p>
+                    Portada real de un album que genera desagrado y tiene un diseño poco original.
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div id="grafica">
+                    <canvas id="myChart1"></canvas>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-1">
+                <div class="m-1">
+                    <p style="font-size: 5rem;">2</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card bg-dark text-light" style="width: 12rem;">
+                    <img class="m-3" src="https://th.bing.com/th/id/R.14da09794da3fc06b4e5769f99b4aea4?rik=6nRMHtZFQnQHFQ&riu=http%3a%2f%2f2.bp.blogspot.com%2f-xOIBZc-5004%2fVRgKE04ACPI%2fAAAAAAAAR64%2fWEy2Jz2_2MI%2fs1600%2fedwards4.jpg&ehk=frANozGRRDwzwgerL%2f4cK0%2begcmpeiQXj4nFWmUi6JU%3d&risl=&pid=ImgRaw&r=0" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text"><strong>Foster Edwards Orchestra – What's Next?</strong></p>
+                    Portada de album real de Jazz que esta sacado de no se donde pobres elefantes.
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div id="grafica">
+        
+                    <canvas id="myChart2"></canvas>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-1">
+                <div class="m-1">
+                    <p style="font-size: 5rem;">3</p>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="card bg-dark text-light" style="width: 12rem;">
+                    <img class="m-3" src="https://d4q8jbdc3dbnf.cloudfront.net/release/l/6c5551fe8d70641473015ecfda762713.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <p class="card-text"><strong> Mägo de Oz -  La ciudad de los arboles </strong></p>
+                    Portada de album que pinta una visión macabra y con simbologia oscura .
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div id="grafica">
+        
+                    <canvas id="myChart3"></canvas>
+                </div>            
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        const ctx1 = document.getElementById('myChart1').getContext('2d');
+        const myChart1 = new Chart(ctx1, {
+            type: 'bar',
+            data: {
+                labels: ['Originalidad', 'Efectos', 'Artístico',],
+                datasets: [{
+                    label: 'Gerhard Polt – Leberkäs Hawaii',
+                    data: [4, 2, 5],
+                    backgroundColor: [
+                        'rgba(255, 20, 10, 0.2)',
+                        'rgba(1, 200, 20, 0.2)',
+                        'rgba(12, 10, 170, 0.2)',
+                    ],
+                    borderColor: [
+                        'rgba(255, 20, 15, 0.2)',
+                        'rgba(1, 200, 40, 0.2)',
+                        'rgba(120, 10, 180, 0.2)',
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 10
+                    }
+                }
+            }
+        });
+
+
+        const ctx2 = document.getElementById('myChart2').getContext('2d');
+        const myChart2 = new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: ['Fealdad', 'Efectos', 'Artistico', ],
+                datasets: [{
+                    label: 'Foster Edwards Orchestra – What s Next',
+                    data: [5, 2, 7],
+                    backgroundColor: [
+                        'rgba(255,66, 12, 0.2)',
+                        'rgba(54, 162, 295, 0.2)',
+                        'rgba(25, 210, 86, 0.2)',
+                        
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 12, 0.2)',
+                        'rgba(54, 12, 235, 0.2)',
+                        'rgba(165, 06, 86, 0.2)',
+                        
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 10 
+                         
+                                       
+                    }
+                }
+            }
+        });
+
+
+        const ctx3 = document.getElementById('myChart3').getContext('2d');
+        const myChart3 = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Originalidad', 'Efectos', 'Artistico'],
+                datasets: [{
+                    label: 'Mägo de Oz -  La ciudad de los arboles',
+                    data: [4, 6, 6],
+                    backgroundColor: [
+                        'rgba(155, 59, 12, 0.2)',
+                        'rgba(24, 162, 235, 0.2)',
+                        'rgba(175, 86, 86, 0.2)',
+                        
+                    ],
+                    borderColor: [
+                        'rgba(255, 19, 24, 0.2)',
+                        'rgba(84, 162, 275, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        
+                    ],
+                    borderWidth: 4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        suggestedMin: 0,
+                        suggestedMax: 10               
+                    }
+                }
+            }
+        });
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
